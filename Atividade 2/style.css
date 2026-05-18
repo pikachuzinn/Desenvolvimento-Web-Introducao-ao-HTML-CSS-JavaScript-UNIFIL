@@ -1,142 +1,157 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-/* estilo geral da pagina */
-body {
-  background-color: #2d5a27;
-  color: white;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  /* estilo geral da pagina */
+  body {
+    background-color: #2d5a27;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+  }
+
+  /* estilo do header */
+  header {
+    background-color: #1a3d15;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    color: #a8ff78;
+    font-size: 30px;
+  }
+
+  /* titulos das secoes */
+  h2 {
+    color: #a8ff78;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  h3 {
+    color: #ffff00;
+    font-size: 18px;
+  }
+
+  /* paragrafo */
+  p {
+    font-size: 15px;
+    text-align: justify;
+    margin: 10px;
+  }
+
+  /* navegacao */
+  nav {
+    margin-top: 10px;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin: 5px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    background-color: #4a7c3f;
+    padding: 5px 10px;
+  }
+
+  /* efeito hover nos links */
+  nav ul li a:hover {
+    background-color: #a8ff78;
+    color: black;
+  }
+
+  /* links gerais */
+  a {
+    color: #a8ff78;
+  }
+
+  a:hover {
+    color: yellow;
+  }
+
+  /* main */
+  main {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 10px;
+  }
+
+  /* secoes */
+  section {
+    background-color: #1a3d15;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 2px solid #a8ff78;
+  }
+
+  /* imagem */
+  figure img {
+    border: 3px solid green;
+    display: block;
+    margin: 10px auto;
+  }
+
+  /* listas dentro das secoes */
+  section ul {
+    list-style-type: square;
+    padding-left: 20px;
+  }
+
+  section ul li {
+    margin-bottom: 5px;
+  }
+
+  section ol {
+    padding-left: 20px;
+  }
+
+  section ol li {
+    margin-bottom: 5px;
+  }
+
+  /* iframe do youtube */
+  iframe {
+    display: block;
+    margin: 10px auto;
+    border: 2px solid green;
+  }
+
+  /* footer */
+  footer {
+    background-color: #1a3d15;
+    text-align: center;
+    padding: 15px;
+    margin-top: 10px;
+    border-top: 3px solid #a8ff78;
+  }
+
+  footer p {
+    color: white;
+  }
+
+  footer h2 {
+    color: #a8ff78;
+    font-size: 16px;
+  }
+
+  /* agrupamento */
+  h2, h3 {
+    letter-spacing: 1px;
 }
 
-/* estilo do header */
-header {
-  background-color: #1a3d15;
-  padding: 20px;
-  text-align: center;
+  #biomas{
+    border-left: 5px solid yellow;
 }
 
-h1 {
-  color: #a8ff78;
-  font-size: 30px;
-}
-
-/* titulos das secoes */
-h2 {
-  color: #a8ff78;
-  font-size: 22px;
-  text-align: center;
-}
-
-h3 {
-  color: #ffff00;
-  font-size: 18px;
-}
-
-/* paragrafo */
-p {
-  font-size: 15px;
-  text-align: justify;
-  margin: 10px;
-}
-
-/* navegacao */
-nav {
-  margin-top: 10px;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 5px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  background-color: #4a7c3f;
-  padding: 5px 10px;
-}
-
-/* efeito hover nos links */
-nav ul li a:hover {
-  background-color: #a8ff78;
-  color: black;
-}
-
-/* links gerais */
-a {
-  color: #a8ff78;
-}
-
-a:hover {
-  color: yellow;
-}
-
-/* main */
-main {
-  margin: 20px auto;
-  max-width: 800px;
-  padding: 10px;
-}
-
-/* secoes */
-section {
-  background-color: #1a3d15;
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 2px solid #a8ff78;
-}
-
-/* imagem */
-figure img {
-  border: 3px solid green;
-  display: block;
-  margin: 10px auto;
-}
-
-/* listas dentro das secoes */
-section ul {
-  list-style-type: square;
-  padding-left: 20px;
-}
-
-section ul li {
-  margin-bottom: 5px;
-}
-
-section ol {
-  padding-left: 20px;
-}
-
-section ol li {
-  margin-bottom: 5px;
-}
-
-/* iframe do youtube */
-iframe {
-  display: block;
-  margin: 10px auto;
-  border: 2px solid green;
-}
-
-/* footer */
-footer {
-  background-color: #1a3d15;
-  text-align: center;
-  padding: 15px;
-  margin-top: 10px;
-  border-top: 3px solid #a8ff78;
-}
-
-footer p {
-  color: white;
-}
-
-footer h2 {
-  color: #a8ff78;
-  font-size: 16px;
+/* classe de destaque */
+  .destaque {
+    color: yellow;
+    font-weight: bold;
 }
