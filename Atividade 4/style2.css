@@ -1,0 +1,26 @@
+* {
+  background-color: grey;
+}
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 50%;
+  margin: 300px auto;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+  background-color: white;
+}
+
+th {
+  background-color: rgb(255, 124, 1);
+  color: white;
+}
+
+.horario {
+  background-color: rgb(255, 124, 1);
+  color: white;
+}
