@@ -1,0 +1,753 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a001a; /* Roxo bem escuro, quase preto (The End) */
+  color: #e0e0e0; /* Texto claro */
+  line-height: 1.6; /* Melhorar legibilidade */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto; /* Garante proporção */
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+  background-color: #0d000d; /* Preto mais profundo */
+  padding: 1rem 2rem; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #8a2be2; /* Roxo vibrante (olhos do Enderman/portal) */
+  position: sticky; /* Fixo ao rolar */
+  top: 0; /* Gruda no topo */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+header #logo { 
+  font-size: 1.5rem; 
+  font-weight: bold;
+  color: #8a2be2; /* Roxo vibrante */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* ===== MENU ===== */
+nav#menu ul { /* Seletor de ID e tag */
+  display: flex;
+  gap: 1.5rem; 
+}
+
+nav#menu ul > li > a { /* Seletor de filho direto e descendente */
+  color: #cccccc;
+  font-size: 1rem; 
+  padding-bottom: 0.2rem;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav#menu ul > li > a:hover { /* Pseudo-classe */
+  color: #8a2be2; /* Roxo vibrante */
+  border-bottom: 2px solid #8a2be2;
+}
+
+nav#menu ul > li > a.ativo { /* Pseudo-classe */
+  color: #8a2be2; /* Roxo vibrante */
+  border-bottom: 2px solid #8a2be2;
+}
+
+/* botão hamburguer escondido no desktop */
+button#btn-menu { /* Seletor de ID e tag */
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.75rem; 
+  cursor: pointer;
+}
+
+/* ===== BOTÕES ===== */
+.btn-principal {
+  display: inline-block;
+  background-color: #8a2be2; /* Roxo vibrante */
+  color: white;
+  padding: 0.75rem 1.25rem; 
+  border-radius: 4px;
+  border: 2px solid #6a1ac2; /* Roxo mais escuro */
+  font-size: 1rem; 
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-principal:hover {
+  background-color: #6a1ac2;
+  border-color: #8a2be2;
+}
+
+.btn-secundario {
+  display: inline-block;
+  background-color: transparent;
+  color: #8a2be2; /* Roxo vibrante */
+  padding: 0.75rem 1.25rem; 
+  border-radius: 4px;
+  border: 2px solid #8a2be2;
+  font-size: 1rem; 
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-secundario:hover {
+  background-color: #8a2be2;
+  color: white;
+  border-color: #6a1ac2;
+}
+
+/* ===== APRESENTAÇÃO (index) ===== */
+section#apresentacao { /* Seletor de ID e tag */
+  text-align: center;
+  padding: 4rem 1.25rem; 
+  background-color: #2a002a; /* Roxo escuro */
+  border-bottom: 4px solid #0d000d;
+}
+
+section#apresentacao img {
+  border-radius: 4px;
+  border: 4px solid #4a004a; /* Roxo médio */
+  margin: 0 auto 1rem; 
+  width: 300px; /* Tamanho fixo para controle */
+  height: 300px; /* Tamanho fixo para controle */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+section#apresentacao h1 {
+  font-size: 2.25rem; 
+  color: #ffffff;
+  text-shadow: 2px 2px #0d000d;
+  margin-bottom: 0.5rem; 
+  text-transform: uppercase;
+}
+
+section#apresentacao h2 {
+  font-size: 1.25rem; 
+  color: #00ffff; /* Ciano/azul claro (olhos do Enderman) */
+  font-weight: normal;
+  margin-bottom: 0.75rem; 
+  text-shadow: 1px 1px #0d000d;
+}
+
+section#apresentacao p {
+  color: #e0e0e0;
+  margin-bottom: 1.5rem; 
+  max-width: 700px; /* Limitar largura para melhor leitura */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section#apresentacao a {
+  margin: 0.3rem; 
+}
+
+/* ===== HABILIDADES ===== */
+section#habilidades { /* Seletor de ID e tag */
+  background-color: #3a003a; /* Roxo um pouco mais claro que o fundo */
+  padding: 3rem 2rem; 
+  text-align: center;
+  border-bottom: 4px solid #0d000d;
+}
+
+section#habilidades h2 {
+  font-size: 2rem; 
+  color: #ffffff;
+  text-shadow: 2px 2px #0d000d;
+  margin-bottom: 2rem; 
+  text-transform: uppercase;
+}
+
+div#grade-habilidades { /* Seletor de ID e tag */
+  display: grid; /* Usando Grid para o layout */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsivo com minmax */
+  gap: 1.25rem; 
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #2a002a; /* Roxo escuro para os cards */
+  padding: 1.5rem; 
+  border-radius: 4px;
+  border: 3px solid #4a004a; /* Roxo médio */
+  border-bottom: 5px solid #1a001a; /* Borda inferior mais escura */
+  transition: background-color 0.3s, border-color 0.3s;
+  transform: translateY(0);
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s ease-out;
+}
+
+.card:hover {
+  background-color: #3a003a;
+  border-color: #00ffff; /* Ciano no hover */
+  transform: translateY(-5px); /* Leve movimento para cima no hover */
+
+}
+
+.card .icone { 
+  font-size: 2.25rem; 
+  display: block;
+  margin-bottom: 0.75rem; 
+  color: #00ffff; /* Ícones ciano */
+}
+
+.card h3 {
+  color: #ffffff;
+  margin-bottom: 0.5rem; 
+  text-shadow: 1px 1px #0d000d;
+}
+
+.card p {
+  color: #cccccc;
+  font-size: 0.9rem; 
+}
+
+/* ===== TÍTULO PÁGINAS INTERNAS ===== */
+section#titulo-pagina { /* Seletor de ID e tag */
+  text-align: center;
+  padding: 3rem 1.25rem 1.25rem; 
+  background-color: #2a002a; /* Roxo escuro */
+  border-bottom: 4px solid #0d000d;
+}
+
+section#titulo-pagina h1 {
+  font-size: 2.25rem; 
+  color: #ffffff;
+  text-shadow: 2px 2px #0d000d;
+  text-transform: uppercase;
+}
+
+section#titulo-pagina h1::after { /* Pseudo-elemento */
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #00ffff; /* Ciano */
+  margin: 0.5rem auto 0; 
+}
+
+/* ===== SOBRE  ===== */
+section#sobre { /* Seletor de ID e tag */
+  display: flex; /* Usando Flexbox */
+  gap: 2.5rem; 
+
+  padding: 2.5rem 2rem; 
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+div#sobre-foto img { /* Seletor de ID e tag */
+  border-radius: 4px;
+  border: 4px solid #4a004a; /* Roxo médio */
+  width: 1000px; /* Tamanho fixo */
+  height: 220px; /* Tamanho fixo */
+  object-fit: cover;
+}
+
+div#sobre-conteudo h2 { /* Seletor de ID e tag */
+  font-size: 1.5rem; 
+  color: #00ffff; /* Ciano */
+  text-shadow: 1px 1px #0d000d;
+  margin-bottom: 0.75rem; 
+  text-transform: uppercase;
+}
+
+div#sobre-conteudo p {
+  color: #e0e0e0;
+  margin-bottom: 0.75rem; 
+}
+
+/* linha do tempo */
+div#linha-do-tempo { /* Seletor de ID e tag */
+  border-left: 4px solid #4a004a; /* Roxo médio */
+  padding-left: 1.25rem; 
+  margin: 1.25rem 0; 
+}
+
+div#linha-do-tempo .evento { 
+  margin-bottom: 1rem; 
+  position: relative;
+}
+
+div#linha-do-tempo .evento::before { /* Pseudo-elemento */
+  content: '✦'; /* Estrela do The End */
+  position: absolute;
+  left: -1.8rem; 
+  top: 0px;
+  font-size: 1rem; 
+  color: #00ffff; /* Ciano */
+}
+
+div#linha-do-tempo .evento .ano { 
+  color: #00ffff; /* Ciano */
+  font-weight: bold;
+  font-size: 0.8rem; 
+  display: block;
+  text-shadow: 1px 1px #0d000d;
+}
+
+div#linha-do-tempo .evento p {
+  color: #e0e0e0;
+  font-size: 0.9rem; 
+  margin-bottom: 0;
+}
+
+/* ===== PROJETOS ===== */
+section#filtros { /* Seletor de ID e tag */
+  text-align: center;
+  padding: 1.25rem; 
+  background-color: #2a002a; /* Roxo escuro */
+  border-bottom: 3px solid #0d000d;
+}
+
+section#filtros .btn-filtro { 
+  padding: 0.5rem 1.125rem; 
+  border-radius: 4px;
+  border: 2px solid #4a004a; /* Roxo médio */
+  background: #3a003a; /* Roxo um pouco mais claro */
+  color: #cccccc;
+  cursor: pointer;
+  font-size: 0.9rem; 
+  margin: 0.25rem; 
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+section#filtros .btn-filtro:hover {
+  background-color: #8a2be2; /* Roxo vibrante */
+  color: white;
+  border-color: #00ffff; /* Ciano */
+}
+
+section#filtros .btn-filtro.ativo {
+  background-color: #8a2be2; /* Roxo vibrante */
+  color: white;
+  border-color: #00ffff; /* Ciano */
+}
+
+div#grade-projetos { /* Seletor de ID e tag */
+  display: grid; /* Usando Grid */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo com minmax */
+  gap: 1.25rem; 
+  padding: 2rem 2rem; 
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.projeto {
+  background-color: #2a002a; /* Roxo escuro */
+  border-radius: 4px;
+  overflow: hidden;
+  border: 3px solid #4a004a; /* Roxo médio */
+  border-bottom: 5px solid #1a001a; /* Borda inferior mais escura */
+  transition: border-color 0.3s;
+}
+
+.projeto:hover {
+  border-color: #00ffff; /* Ciano no hover */
+}
+
+.projeto img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.projeto-info {
+  padding: 1rem; 
+}
+
+.projeto-info h3 {
+  color: #ffffff;
+  margin-bottom: 0.5rem; 
+  text-shadow: 1px 1px #0d000d;
+}
+
+.projeto-info p {
+  color: #cccccc;
+  font-size: 0.8rem; 
+  margin-bottom: 0.75rem; 
+}
+
+.projeto-info .tags { 
+  display: flex;
+  gap: 0.375rem; 
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem; 
+}
+
+.projeto-info .tag { 
+  background-color: #1a001a; /* Fundo da tag mais escuro */
+  color: #00ffff; /* Ciano */
+  padding: 0.1875rem 0.625rem; 
+  border-radius: 4px;
+  font-size: 0.75rem; 
+  font-weight: bold;
+  border: 1px solid #00ffff; /* Borda ciano */
+}
+
+/* ===== CONTATO ===== */
+section#contato { /* Seletor de ID e tag */
+  display: flex; /* Usando Flexbox */
+  gap: 2.5rem; 
+  padding: 2.5rem 2rem 3.75rem; 
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+div#contato-info h2 { /* Seletor de ID e tag */
+  font-size: 1.375rem; 
+  color: #00ffff; /* Ciano */
+  text-shadow: 1px 1px #0d000d;
+  margin-bottom: 0.75rem; 
+  text-transform: uppercase;
+}
+
+div#contato-info p {
+  color: #e0e0e0;
+  margin-bottom: 1.25rem; 
+}
+
+div#contato-info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; 
+}
+
+div#contato-info ul > li { /* Seletor de filho direto */
+  color: #cccccc;
+}
+
+div#contato-info ul > li > a { /* Seletor de filho direto */
+  color: #8a2be2; /* Roxo vibrante */
+}
+
+div#contato-info ul > li > a:hover {
+  color: #00ffff; /* Ciano */
+}
+
+/* formulário */
+form#formulario { /* Seletor de ID e tag */
+  flex: 1;
+}
+
+form#formulario fieldset {
+  border: 3px solid #4a004a; /* Roxo médio */
+  border-radius: 4px;
+  padding: 1.25rem; 
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem; 
+  background-color: #2a002a; /* Roxo escuro */
+}
+
+form#formulario legend {
+  color: #00ffff; /* Ciano */
+  font-weight: bold;
+  padding: 0 0.375rem; 
+  font-size: 1rem; 
+  text-transform: uppercase;
+}
+
+form#formulario label {
+  font-weight: bold;
+  font-size: 0.875rem; 
+  color: #ffffff;
+}
+
+form#formulario input[type="text"], /* Seletor de atributo */
+form#formulario input[type="email"],
+form#formulario textarea {
+  padding: 0.5rem; 
+  border-radius: 4px;
+  border: 2px solid #4a004a; /* Roxo médio */
+  background-color: #3a003a; /* Roxo um pouco mais claro */
+  color: #ffffff;
+  font-size: 0.875rem; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+form#formulario input[type="text"]:focus, /* Pseudo-classe */
+form#formulario input[type="email"]:focus,
+form#formulario textarea:focus {
+  border-color: #00ffff; /* Ciano */
+  background-color: #4a004a; /* Roxo médio */
+  outline: none;
+}
+
+form#formulario input:invalid { /* Pseudo-classe */
+  border: 2px solid #ff0000; /* Vermelho para erro */
+}
+
+form#formulario textarea {
+  resize: vertical;
+}
+
+form#formulario p#feedback { /* Seletor de descendente e ID */
+  font-size: 0.875rem; 
+  font-weight: bold;
+  min-height: 1.25rem; 
+}
+
+form#formulario p#feedback.sucesso {
+  color: #00ffff; /* Ciano para sucesso */
+}
+
+form#formulario p#feedback.erro {
+  color: #ff0000; /* Vermelho para erro */
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  text-align: center;
+  padding: 1.25rem; 
+  background-color: #0d000d; /* Preto mais profundo */
+  border-top: 4px solid #8a2be2; /* Roxo vibrante */
+  color: #aaaaaa;
+  font-size: 0.8rem; 
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes surgir {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#apresentacao {
+  animation: surgir 0.6s ease;
+}
+
+/* ===== RESPONSIVIDADE TABLET ===== */
+@media (max-width: 768px) {
+  button#btn-menu {
+    display: block;
+  }
+
+  nav#menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* Altura do header */
+    left: 0;
+    width: 100%;
+    background-color: #0d000d;
+    padding: 1rem; 
+    border-bottom: 3px solid #8a2be2;
+    z-index: 99;
+  }
+
+  nav#menu.aberto {
+    display: block;
+  }
+
+  nav#menu ul {
+    flex-direction: column;
+    gap: 0.75rem; 
+  }
+
+  section#sobre {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  section#contato {
+    flex-direction: column;
+  }
+}
+
+/* ===== RESPONSIVIDADE CELULAR ===== */
+@media (max-width: 480px) {
+  header {
+    padding: 0.75rem 1rem; 
+  }
+
+  section#apresentacao h1 {
+    font-size: 1.75rem; 
+  }
+
+  div#grade-habilidades,
+  div#grade-projetos {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+:root {
+  --bg-0: #0d000d;
+  --bg-1: #1a001a;
+  --bg-2: #2a002a;
+  --bg-3: #3a003a;
+  --roxo: #8a2be2;
+  --roxo-2: #6a1ac2;
+  --ciano: #00ffff;
+  --texto: #e0e0e0;
+  --texto-2: #cccccc;
+  --borda: #4a004a;
+  --radius: 8px;
+  --sombra: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Tipografia e renderização */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at top, #240024 0%, var(--bg-1) 45%, #120012 100%);
+  color: var(--texto);
+}
+
+/* Header mais sólido */
+header {
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Menu com estado ativo mais visível */
+nav#menu ul > li > a {
+  padding: 0.4rem 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+nav#menu ul > li > a:hover,
+nav#menu ul > li > a.ativo {
+  color: var(--roxo);
+  border-bottom-color: var(--roxo);
+}
+
+/* Acessibilidade de foco */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--ciano);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Cards com acabamento melhor */
+.card,
+.projeto,
+form#formulario fieldset {
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+}
+
+/* Remover redundância de transition e suavizar interação */
+.card {
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+/* Projeto com animação mais suave */
+.projeto {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.projeto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 255, 255, 0.12);
+}
+
+/* Botões mais consistentes */
+.btn-principal,
+.btn-secundario,
+button {
+  border-radius: 6px;
+}
+
+.btn-principal:active,
+.btn-secundario:active,
+button:active {
+  transform: translateY(1px);
+}
+
+/* Inputs mais uniformes */
+form#formulario input[type="text"],
+form#formulario input[type="email"],
+form#formulario textarea {
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form#formulario input[type="text"]:focus,
+form#formulario input[type="email"]:focus,
+form#formulario textarea:focus {
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.12);
+}
+
+/* Corrige invalid para todos os campos relevantes */
+form#formulario input:invalid,
+form#formulario textarea:invalid {
+  border: 2px solid #ff3b3b;
+}
+
+/* Lista de contato preparada para ícones/imagens */
+div#contato-info ul > li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Rodapé com mais contraste */
+footer {
+  letter-spacing: 0.3px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile: menu e espaçamentos melhores */
+@media (max-width: 768px) {
+  nav#menu {
+    top: 64px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  }
+
+  section#apresentacao,
+  section#habilidades,
+  section#titulo-pagina,
+  section#sobre,
+  section#contato {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Respeita usuários com redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Entre em contato com Henan Shirahige para oportunidades de desenvolvimento backend e automação."
+    />
+    <title>Contato | Henan Shirahige</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="logo">Henan</div>
+      <button
+        id="btn-menu"
+        type="button"
+        aria-label="Abrir menu"
+        aria-controls="menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <nav id="menu">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="contato.html" class="ativo">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="titulo-pagina">
+        <h1>Contato</h1>
+      </section>
+
+      <section id="contato">
+        <div id="contato-info">
+          <h2>Vamos Conectar?</h2>
+          <p>
+            Estou aberto a novas oportunidades de desenvolvimento, colaborações
+            em projetos e parcerias estratégicas.
+          </p>
+          <ul>
+            <li>
+              📧
+              <a href="mailto:henanshirahige@email.com"
+                >henanshirahige@email.com</a
+              >
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/256/174/174857.png"
+                alt="Ícone LinkedIn"
+                width="18"
+              />
+              <a
+                href="https://www.linkedin.com/in/henan-heiiji-shirahige-745467350"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <img
+                src="https://e7.pngegg.com/pngimages/914/758/png-clipart-computer-icons-logo-github-github-logo-logo-computer-program-thumbnail.png"
+                alt="Ícone GitHub"
+                width="18"
+              />
+              <a
+                href="https://github.com/pikachuzinn"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <form id="formulario">
+          <fieldset>
+            <legend>Envie sua Mensagem</legend>
+
+            <label for="nome">Nome Completo</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Seu nome"
+              required
+            />
+
+            <label for="email">E-mail Profissional</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="seu.email@empresa.com"
+              required
+            />
+
+            <label for="mensagem">Mensagem</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="5"
+              placeholder="Descreva sua proposta ou interesse..."
+              required
+            ></textarea>
+
+            <button type="submit" class="btn-principal">Enviar Mensagem</button>
+
+            <p id="feedback"></p>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Henan Shirahige. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
